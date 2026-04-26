@@ -16,3 +16,6 @@ sessions.db
 
 # Streamlit
 .streamlit/
+
+# Temporary files
+scratch/
