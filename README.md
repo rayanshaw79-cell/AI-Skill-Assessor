@@ -66,6 +66,19 @@ python -m streamlit run frontend/app.py
 
 ---
 
+## 🚢 Deployment
+
+### Deploying to Hugging Face Spaces (Free)
+This project is configured to run on Hugging Face Spaces using Docker.
+
+1.  **Create a New Space**: Go to [huggingface.co/new-space](https://huggingface.co/new-space).
+2.  **Select SDK**: Choose **Docker**.
+3.  **Choose Template**: Select **Blank** (or any simple Docker template).
+4.  **Upload Files**: You can either connect your GitHub repository or upload the files directly.
+5.  **Wait for Build**: Hugging Face will automatically detect the `Dockerfile`, run the `start.sh` script, and expose the application on port 7860.
+
+---
+
 ## 📝 Sample Input & Output
 
 ### Sample Input

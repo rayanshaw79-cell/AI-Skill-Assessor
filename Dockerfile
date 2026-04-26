@@ -14,8 +14,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Expose ports for FastAPI (8000) and Streamlit (8501)
-EXPOSE 8000 8501
+# Expose port 7860 for Hugging Face Spaces
+EXPOSE 7860
 
-# Default command starts the FastAPI backend
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Make the startup script executable
+RUN chmod +x start.sh
+
+# Run the startup script
+CMD ["./start.sh"]
