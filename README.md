@@ -1,3 +1,12 @@
+---
+title: AI Skill Assessor
+emoji: 🤖
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 # AI Skill Assessor 🤖
 
 An intelligent, role-aware, and adaptive skill assessment system designed to evaluate candidate readiness through conversational technical interviews.
