@@ -1,71 +1,76 @@
 {
-  "python": ["python", "python3"],
-  "java": ["java", "java 8", "java 11", "java 17"],
-  "c++": ["c++", "cpp"],
-  "c#": ["c#", "csharp", "c sharp"],
-  "ruby": ["ruby"],
-  "golang": ["golang", "go"],
-  "javascript": ["javascript", "js", "es6"],
-  "typescript": ["typescript", "ts"],
-  "react": ["react", "reactjs", "react.js"],
-  "angular": ["angular", "angularjs"],
-  "vue": ["vue", "vuejs", "vue.js"],
-  "node.js": ["node.js", "node", "nodejs"],
-  "fastapi": ["fastapi"],
-  "django": ["django"],
-  "flask": ["flask"],
-  "spring": ["spring", "spring boot"],
-  "sql": ["sql"],
-  "mysql": ["mysql"],
-  "postgresql": ["postgresql", "postgres"],
-  "mongodb": ["mongodb", "mongo"],
-  "redis": ["redis"],
-  "elasticsearch": ["elasticsearch", "elastic search"],
-  "aws": ["aws", "amazon web services"],
-  "gcp": ["gcp", "google cloud platform"],
-  "azure": ["azure"],
-  "docker": ["docker"],
-  "kubernetes": ["kubernetes", "k8s"],
-  "terraform": ["terraform"],
-  "ci/cd": ["ci/cd", "ci-cd", "continuous integration"],
-  "machine learning": ["machine learning", "ml"],
-  "deep learning": ["deep learning", "dl"],
-  "nlp": ["nlp", "natural language processing"],
-  "computer vision": ["computer vision", "cv"],
-  "tensorflow": ["tensorflow", "tf"],
-  "pytorch": ["pytorch"],
-  "pandas": ["pandas"],
-  "numpy": ["numpy"],
-  "scikit-learn": ["scikit-learn", "sklearn"],
-  "data analysis": ["data analysis", "data analytics"],
-  "llm": ["llm", "large language model", "genai", "generative ai"],
+  "python": {
+    "aliases": ["python", "python3"],
+    "conceptual_keywords": "programming, logic, scripts, automation, data structures, libraries, development"
+  },
+  "java": {
+    "aliases": ["java", "java 8", "java 11", "java 17"],
+    "conceptual_keywords": "object oriented, jvm, classes, multithreading, enterprise, backend"
+  },
+  "golang": {
+    "aliases": ["golang", "go"],
+    "conceptual_keywords": "concurrency, goroutines, static typing, performance, systems, microservices"
+  },
+  "javascript": {
+    "aliases": ["javascript", "js", "es6"],
+    "conceptual_keywords": "asynchronous, callbacks, frontend, web development, event loop, dom"
+  },
+  "typescript": {
+    "aliases": ["typescript", "ts"],
+    "conceptual_keywords": "static typing, interfaces, types, safe code, scalable javascript"
+  },
+  "react": {
+    "aliases": ["react", "reactjs", "react.js"],
+    "conceptual_keywords": "components, hooks, state management, virtual dom, props, web interface"
+  },
+  "fastapi": {
+    "aliases": ["fastapi"],
+    "conceptual_keywords": "api, endpoints, asynchronous, pydantic, validation, web framework"
+  },
+  "sql": {
+    "aliases": ["sql"],
+    "conceptual_keywords": "queries, databases, relational, joins, indexing, data management"
+  },
+  "aws": {
+    "aliases": ["aws", "amazon web services"],
+    "conceptual_keywords": "cloud, infrastructure, ec2, s3, serverless, deployment, scalable"
+  },
+  "docker": {
+    "aliases": ["docker"],
+    "conceptual_keywords": "containers, virtualization, images, orchestration, deployment, isolation"
+  },
+  "kubernetes": {
+    "aliases": ["kubernetes", "k8s"],
+    "conceptual_keywords": "clusters, orchestration, pods, nodes, scaling, containers"
+  },
+  "machine learning": {
+    "aliases": ["machine learning", "ml"],
+    "conceptual_keywords": "algorithms, models, training, prediction, data science, statistics"
+  },
+  "lead generation": {
+    "aliases": ["lead generation", "lead gen", "prospecting", "outbound sales", "inbound sales"],
+    "conceptual_keywords": "prospects, outreach, sales funnel, marketing, business development"
+  },
+  "crm": {
+    "aliases": ["crm", "salesforce", "hubspot", "zoho crm", "pipedrive", "customer relationship management"],
+    "conceptual_keywords": "customer management, pipeline, data integrity, sales tracking"
+  },
+  "negotiation": {
+    "aliases": ["negotiation", "closing deals", "deal closing", "contract negotiation"],
+    "conceptual_keywords": "persuasion, value, agreement, deal making, communication"
+  },
+  "seo": {
+    "aliases": ["seo", "search engine optimization", "on-page seo", "off-page seo", "technical seo"],
+    "conceptual_keywords": "keywords, ranking, organic traffic, visibility, search engines"
+  },
+  "communication": {
+    "aliases": ["communication", "verbal communication", "written communication", "presentation skills", "public speaking"],
+    "conceptual_keywords": "clarity, active listening, presentation, verbal, written"
+  },
+  "leadership": {
+    "aliases": ["leadership", "team leadership", "people management", "mentoring", "coaching"],
+    "conceptual_keywords": "management, motivation, delegation, strategy, team building"
+  }
 
-  "lead generation": ["lead generation", "lead gen", "prospecting", "outbound sales", "inbound sales"],
-  "crm": ["crm", "salesforce", "hubspot", "zoho crm", "pipedrive", "customer relationship management"],
-  "negotiation": ["negotiation", "closing deals", "deal closing", "contract negotiation"],
-  "pipeline management": ["pipeline management", "sales pipeline", "sales funnel", "revenue pipeline"],
-  "account management": ["account management", "key accounts", "client management", "client retention"],
-  "b2b sales": ["b2b", "b2b sales", "business to business", "enterprise sales", "saas sales"],
-  "b2c sales": ["b2c", "b2c sales", "business to consumer", "retail sales", "consumer sales"],
-  "cold calling": ["cold calling", "cold outreach", "telemarketing", "phone sales"],
-  "sales strategy": ["sales strategy", "go-to-market", "gtm strategy", "revenue strategy", "quota attainment"],
 
-  "seo": ["seo", "search engine optimization", "on-page seo", "off-page seo", "technical seo"],
-  "sem": ["sem", "search engine marketing", "ppc", "pay-per-click", "google ads", "paid search"],
-  "content marketing": ["content marketing", "content strategy", "content creation", "blog", "copywriting"],
-  "social media marketing": ["social media", "social media marketing", "instagram", "linkedin marketing", "twitter marketing", "facebook ads"],
-  "email marketing": ["email marketing", "email campaigns", "drip campaigns", "mailchimp", "klaviyo"],
-  "brand strategy": ["brand strategy", "branding", "brand management", "brand awareness", "positioning"],
-  "google analytics": ["google analytics", "ga4", "web analytics", "adobe analytics"],
-  "market research": ["market research", "competitive analysis", "consumer insights", "market analysis"],
-  "product marketing": ["product marketing", "product launch", "go-to-market", "competitive positioning"],
-  "digital marketing": ["digital marketing", "online marketing", "performance marketing", "growth marketing"],
-
-  "communication": ["communication", "verbal communication", "written communication", "presentation skills", "public speaking"],
-  "leadership": ["leadership", "team leadership", "people management", "mentoring", "coaching"],
-  "project management": ["project management", "agile", "scrum", "kanban", "jira", "stakeholder management"],
-  "problem solving": ["problem solving", "analytical thinking", "critical thinking", "decision making"],
-  "strategic thinking": ["strategic thinking", "strategy", "planning", "business strategy", "roadmap"],
-  "collaboration": ["collaboration", "cross-functional", "teamwork", "stakeholder management"],
-  "data-driven": ["data-driven", "kpi", "metrics", "okr", "reporting", "dashboards"]
 }

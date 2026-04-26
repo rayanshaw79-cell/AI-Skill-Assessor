@@ -26,12 +26,14 @@ The **AI Skill Assessor** transforms static evaluations into dynamic, context-aw
 - **Session Persistence**: SQLite-backed session management allows for interview continuity and stateful tracking.
 - **No-Cost Heuristics**: Operates entirely locally with high-performance rule-based evaluation—no expensive LLM API calls required.
 
-## 🧠 How the Heuristic Scoring Works
-To achieve zero-latency, free assessment without relying on external generative LLMs, the AI Assessor employs a custom heuristic algorithm (`conversational_assessor.py`) to evaluate candidate responses. It grades answers based on four vectors:
-1. **Accuracy (0.4 weight):** Matches contextual terminology against role-agnostic professional and technical keyword banks.
-2. **Depth (0.3 weight):** Evaluates the comprehensiveness of the answer based on word count thresholds (e.g., strong answers usually require >30 words).
-3. **Clarity (0.1 weight):** Checks for structural readability indicators (e.g., punctuation, paragraph breaks).
-4. **Applied Knowledge (0.2 weight):** Scans for action-oriented vocabulary (e.g., "built", "designed", "managed", "implemented") to differentiate between theoretical knowledge and practical experience.
+## 🧠 How the Heuristic & Semantic Scoring Works
+To achieve high accuracy without relying on external generative LLMs, the AI Assessor employs a hybrid engine (`conversational_assessor.py` & `utils/nlp_engine.py`) to evaluate candidate responses. It grades answers based on four vectors:
+1. **Accuracy (0.3 weight):** Uses **Semantic Similarity** (via `all-MiniLM-L6-v2`) to compare the response against a "Goal Vector" composed of the skill and its conceptual keyword cluster.
+2. **Depth (0.3 weight):** Evaluates the comprehensiveness of the answer based on word count thresholds (e.g., strong answers usually require >25-45 words).
+3. **Clarity (0.2 weight):** Checks for structural readability and effective communication.
+4. **Applied Knowledge (0.2 weight):** Uses **Semantic Similarity** against action-oriented reference statements (e.g., "I implemented...", "I designed...") to detect practical experience.
+
+*Note: The system includes a graceful keyword-overlap fallback if the local NLP environment cannot be initialized.*
 
 ## 🛠️ Project Architecture
 ```text

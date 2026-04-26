@@ -5,7 +5,7 @@ The AI Skill Assessor is designed to simulate a dynamic, conversational technica
 
 *   **Intelligent Parsing:** The system extracts the Job Description (JD) and the candidate's Resume. It uses a regex-backed taxonomy engine to map aliases (e.g., "K8s" to "Kubernetes") and identify the primary job role (Backend, Sales, Frontend, etc.).
 *   **Waterfall Question Engine:** Questions are stratified into Beginner, Intermediate, and Advanced tiers. The system employs an "escalator" logic: a candidate starts at an Intermediate level. A strong answer promotes them to an Advanced question for the next skill, while a poor answer scales the difficulty down to Beginner, ensuring a customized candidate experience.
-*   **Heuristic Evaluation:** Instead of using an LLM to grade answers, the system uses a custom heuristic scoring algorithm. It evaluates responses based on keyword context matching (accuracy), word count thresholds (depth), structural markers (clarity), and action-oriented vocabulary like "built", "managed", or "led" (practical application).
+*   **Heuristic & Semantic Evaluation:** Instead of using an LLM to grade answers, the system uses a hybrid scoring engine. It combines keyword-based heuristics with **local semantic similarity** (Sentence Transformers). It evaluates responses based on semantic accuracy against a "Goal Vector", word count thresholds (depth), structural markers (clarity), and action-oriented vocabulary (practical application).
 *   **Gap Analysis & Planning:** Upon completion, the system generates a quantified "Job Readiness Score," maps demonstrated skills against required levels on a Radar Chart, and outputs an actionable, week-by-week learning plan that includes adjacent skill suggestions.
 
 ## 2. System Architecture
@@ -16,17 +16,18 @@ The application is built on a modular, decoupled architecture prioritizing speed
 *   **Modular "Agents":** The business logic is isolated into specific agent modules:
     *   `jd_parser.py`: Maps JD text to predefined role clusters.
     *   `resume_analyzer.py`: Extracts and normalizes candidate skills.
-    *   `conversational_assessor.py`: The heuristic scoring engine evaluating real-time chat responses.
+    *   `conversational_assessor.py`: The hybrid scoring engine evaluating real-time chat responses.
     *   `planner.py`: Aggregates scores to generate the final personalized report.
-*   **Data Persistence (SQLite):** Chat histories, current skill indices, and interim scores are persisted locally in `sessions.db`. This allows for stateless API calls and ensures interview continuity even if the frontend refreshes.
+*   **NLP Engine (Sentence Transformers):** A lightweight `all-MiniLM-L6-v2` model running locally to provide vector-based similarity scores without API costs.
+*   **Data Persistence (SQLite):** Chat histories, current skill indices, and interim scores are persisted locally in `sessions.db`.
 *   **Containerization (Docker):** The entire stack is bundled via Docker and orchestrated via a `start.sh` script, exposing a unified interface for platforms like Hugging Face Spaces.
 
 ## 3. Trade-offs & Engineering Decisions
 
-### **Heuristic Scoring vs. Generative LLMs**
-*   **The Decision:** We opted for a sophisticated keyword/heuristic engine for grading answers instead of sending every user message to a model like GPT-4.
-*   **Pros:** **$0 Operational Cost**, near-zero latency, absolute deterministic reliability, and complete data privacy (no candidate data is sent to external APIs).
-*   **Cons:** The system evaluates the *presence* of knowledge markers rather than deep semantic comprehension. A candidate could theoretically "keyword stuff" an answer without forming a coherent sentence and still score reasonably well.
+### **Semantic Heuristics vs. Generative LLMs**
+*   **The Decision:** We opted for a local Semantic NLP engine (Sentence Transformers) combined with heuristic markers for grading answers.
+*   **Pros:** **$0 Operational Cost**, near-zero latency, absolute deterministic reliability, and complete data privacy. The addition of semantic similarity makes the system much harder to "game" than simple keyword matching.
+*   **Cons:** Requires local CPU resources to load the embedding model (~80MB). While more accurate than keywords, it still lacks the conversational nuance of a full generative LLM for open-ended feedback.
 
 ### **SQLite Local Persistence vs. Cloud Databases (PostgreSQL/Redis)**
 *   **The Decision:** We used a local SQLite file (`utils/database.py`) to handle session state rather than spinning up a Redis cache or a managed PostgreSQL instance.

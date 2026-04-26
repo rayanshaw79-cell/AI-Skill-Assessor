@@ -1,8 +1,10 @@
 import re
+from utils.nlp_engine import nlp_engine
+from .jd_parser import SKILLS_CONFIG
 
 def evaluate_response(skill: str, question: str, response: str) -> dict:
     """
-    Evaluates a user response using heuristics.
+    Evaluates a user response using semantic NLP and heuristics.
     Returns a dictionary with scores for:
     - accuracy (0.0 to 1.0)
     - depth (0.0 to 1.0)
@@ -16,48 +18,52 @@ def evaluate_response(skill: str, question: str, response: str) -> dict:
     if word_count == 0:
         return {"accuracy": 0.0, "depth": 0.0, "clarity": 0.0, "applied": 0.0}
     
-    # 1. Accuracy heuristic
-    # Check if they mention the skill or related strategic/technical terms.
-    context_terms = [
-        skill.lower(), 'strategy', 'process', 'management', 'system', 'data',
-        'result', 'analysis', 'client', 'customer', 'market', 'team',
-        'execution', 'growth', 'optimization', 'performance', 'standard',
-        'best practice', 'implementation', 'outcome', 'metrics', 'kpi',
-        'framework', 'solution', 'approach', 'function', 'method', 'architecture'
-    ]
-    matched_terms = sum(1 for term in context_terms if term in response_lower)
-    accuracy = min(1.0, matched_terms / 3.0) # Needs 3 context terms for full score
+    # 1. Semantic Accuracy heuristic
+    skill_key = skill.lower()
+    skill_data = SKILLS_CONFIG.get(skill_key, {})
+    conceptual_keywords = skill_data.get("conceptual_keywords", "")
+    
+    # Target string for semantic comparison
+    target_context = f"{skill} {conceptual_keywords}"
+    semantic_score = nlp_engine.get_similarity(response_lower, target_context)
+    
+    # Adjust semantic score to be more generous
+    accuracy = min(1.0, max(0.0, (semantic_score - 0.2) / 0.4))
     
     # 2. Depth heuristic
-    # Based on response length. A longer explanation typically indicates depth in a text chat.
-    if word_count > 40:
+    if word_count > 45:
         depth = 1.0
-    elif word_count > 20:
+    elif word_count > 25:
         depth = 0.8
-    elif word_count > 10:
+    elif word_count > 15:
         depth = 0.5
-    elif word_count > 3:
+    elif word_count > 5:
         depth = 0.2
     else:
         depth = 0.0
         
     # 3. Clarity heuristic
-    # Baseline clarity score based on sentence length.
-    if 5 < word_count < 100:
-        clarity = 0.9
+    if 10 < word_count < 120:
+        clarity = 1.0
     elif word_count <= 5:
-        clarity = 0.4 # Too short
+        clarity = 0.3
     else:
-        clarity = 0.7 # A bit too verbose/run-on
+        clarity = 0.7
         
-    # 4. Applied heuristic
-    # Check for words indicating real-world application.
-    applied_keywords = [
-        "used", "built", "designed", "implemented", "created", 
-        "project", "example", "experience", "developed", "team", "production", "work"
+    # 4. Semantic Applied heuristic
+    applied_references = [
+        "I implemented this in a project",
+        "I used this to solve a problem",
+        "In my previous role, I built",
+        "I have hands-on experience with",
+        "I designed the architecture for",
+        "I managed the deployment of"
     ]
-    matched_applied = sum(1 for term in applied_keywords if term in response_lower)
-    applied = min(1.0, matched_applied / 2.0) # Needs 2 applied words to get full score
+    
+    applied_similarities = [nlp_engine.get_similarity(response_lower, ref) for ref in applied_references]
+    max_applied_sim = max(applied_similarities) if applied_similarities else 0
+    
+    applied = min(1.0, max(0.0, (max_applied_sim - 0.3) / 0.4))
     
     return {
         "accuracy": round(accuracy, 2),
@@ -65,3 +71,4 @@ def evaluate_response(skill: str, question: str, response: str) -> dict:
         "clarity": round(clarity, 2),
         "applied": round(applied, 2)
     }
+

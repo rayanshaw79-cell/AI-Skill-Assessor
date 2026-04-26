@@ -66,7 +66,8 @@ def parse_jd(jd_text: str) -> list[dict]:
         "working knowledge", "familiarity", "2+ years", "3+ years"
     ]
 
-    for main_skill, aliases in SKILLS_CONFIG.items():
+    for main_skill, skill_data in SKILLS_CONFIG.items():
+        aliases = skill_data.get("aliases", [])
         matched = False
         count = 0
         for alias in aliases:

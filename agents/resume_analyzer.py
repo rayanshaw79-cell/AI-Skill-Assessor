@@ -9,7 +9,8 @@ def analyze_resume(resume_text: str) -> list[str]:
     resume_lower = resume_text.lower()
     claimed_skills = []
     
-    for main_skill, aliases in SKILLS_CONFIG.items():
+    for main_skill, skill_data in SKILLS_CONFIG.items():
+        aliases = skill_data.get("aliases", [])
         matched = False
         for alias in aliases:
             pattern = r'(?<!\w)' + re.escape(alias) + r'(?!\w)'
