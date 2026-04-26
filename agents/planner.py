@@ -15,7 +15,14 @@ def generate_learning_plan(required_skills: list[dict], skill_scores: dict[str, 
         "sql": ["data analysis", "postgresql", "mysql"],
         "data analysis": ["machine learning", "pandas", "sql"],
         "machine learning": ["deep learning", "nlp", "llm", "tensorflow", "pytorch"],
-        "aws": ["kubernetes", "docker", "ci/cd", "terraform"]
+        "aws": ["kubernetes", "docker", "ci/cd", "terraform"],
+        "lead generation": ["crm", "negotiation", "pipeline management", "sales strategy"],
+        "crm": ["lead generation", "account management", "data-driven", "sales strategy"],
+        "seo": ["sem", "content marketing", "google analytics", "digital marketing"],
+        "content marketing": ["seo", "social media marketing", "brand strategy", "digital marketing"],
+        "communication": ["leadership", "collaboration", "negotiation", "strategic thinking"],
+        "leadership": ["strategic thinking", "project management", "communication", "collaboration"],
+        "strategic thinking": ["leadership", "data-driven", "project management", "market research"]
     }
     
     for req in required_skills:

@@ -17,14 +17,16 @@ def evaluate_response(skill: str, question: str, response: str) -> dict:
         return {"accuracy": 0.0, "depth": 0.0, "clarity": 0.0, "applied": 0.0}
     
     # 1. Accuracy heuristic
-    # Check if they mention the skill or related technical terms.
-    tech_terms = [
-        skill.lower(), 'function', 'class', 'database', 'api', 'model', 
-        'server', 'client', 'data', 'architecture', 'system', 'variable', 
-        'component', 'library', 'framework', 'code', 'deploy', 'test', 'scale', 'query'
+    # Check if they mention the skill or related strategic/technical terms.
+    context_terms = [
+        skill.lower(), 'strategy', 'process', 'management', 'system', 'data',
+        'result', 'analysis', 'client', 'customer', 'market', 'team',
+        'execution', 'growth', 'optimization', 'performance', 'standard',
+        'best practice', 'implementation', 'outcome', 'metrics', 'kpi',
+        'framework', 'solution', 'approach', 'function', 'method', 'architecture'
     ]
-    matched_terms = sum(1 for term in tech_terms if term in response_lower)
-    accuracy = min(1.0, matched_terms / 3.0) # Needs 3 tech terms for full score
+    matched_terms = sum(1 for term in context_terms if term in response_lower)
+    accuracy = min(1.0, matched_terms / 3.0) # Needs 3 context terms for full score
     
     # 2. Depth heuristic
     # Based on response length. A longer explanation typically indicates depth in a text chat.

@@ -244,5 +244,61 @@
         "How would you design a type-safe event emitter in TypeScript?"
       ]
     }
+  },
+  "lead generation": {
+    "Sales": {
+      "Beginner": ["What is lead generation and why is it important for a sales pipeline?", "What is the difference between inbound and outbound leads?"],
+      "Intermediate": ["How do you qualify a lead? What criteria (like BANT) do you use?", "Describe your process for researching and finding high-quality prospects."],
+      "Advanced": ["How would you design an end-to-end lead generation strategy for a new SaaS product?", "How do you optimize lead conversion rates across different sales channels?"]
+    }
+  },
+  "crm": {
+    "Sales": {
+      "Beginner": ["What is a CRM and how does it help a sales team?", "Have you used tools like Salesforce or HubSpot before?"],
+      "Intermediate": ["How do you use CRM data to prioritize your daily sales activities?", "Explain the importance of data integrity in a CRM system."],
+      "Advanced": ["How would you set up a CRM workflow to automate follow-ups and pipeline tracking?", "Describe how you use CRM analytics to forecast quarterly revenue."]
+    }
+  },
+  "negotiation": {
+    "Sales": {
+      "Beginner": ["What does it mean to negotiate a deal?", "How do you handle a prospect who says your price is too high?"],
+      "Intermediate": ["Describe a time you had to negotiate a complex deal. What was your strategy?", "How do you build value so that price becomes less of an issue?"],
+      "Advanced": ["How do you handle multi-stakeholder negotiations in enterprise sales?", "What is your approach to 'win-win' negotiation while protecting company margins?"]
+    }
+  },
+  "seo": {
+    "Marketing": {
+      "Beginner": ["What is SEO and how does it differ from SEM?", "What are keywords and why are they important?"],
+      "Intermediate": ["Explain the difference between on-page and off-page SEO.", "How do you conduct keyword research for a new blog post?"],
+      "Advanced": ["How would you approach a technical SEO audit for a website with 10,000+ pages?", "Describe your strategy for building a high-quality backlink profile."]
+    }
+  },
+  "content marketing": {
+    "Marketing": {
+      "Beginner": ["What is content marketing?", "What are some common types of marketing content?"],
+      "Intermediate": ["How do you align content creation with the different stages of the buyer's journey?", "What metrics do you use to measure the success of a content piece?"],
+      "Advanced": ["How would you design a content distribution strategy that maximizes reach and ROI?", "Describe how you use storytelling to build brand authority through content."]
+    }
+  },
+  "communication": {
+    "General": {
+      "Beginner": ["How do you ensure your message is clearly understood by others?", "What is active listening?"],
+      "Intermediate": ["How do you handle difficult conversations or disagreements within a team?", "Describe a time you had to explain a complex concept to a non-technical audience."],
+      "Advanced": ["How do you tailor your communication style when presenting to executives versus a technical team?", "Describe your approach to cross-functional communication in a large-scale project."]
+    }
+  },
+  "leadership": {
+    "Management": {
+      "Beginner": ["What does leadership mean to you?", "How do you motivate your team members?"],
+      "Intermediate": ["How do you handle underperforming team members?", "Describe your approach to delegating tasks and empowering others."],
+      "Advanced": ["How do you build and maintain a high-performance culture in a remote or hybrid team?", "Describe a time you had to lead a team through a significant organizational change."]
+    }
+  },
+  "strategic thinking": {
+    "Management": {
+      "Beginner": ["What is a SWOT analysis?", "Why is it important to have a long-term plan for a project?"],
+      "Intermediate": ["How do you prioritize competing projects or goals?", "Describe a time you identified a market opportunity or a process improvement."],
+      "Advanced": ["How do you align project goals with the overall company mission and strategy?", "Describe your process for making data-driven decisions when faced with ambiguity."]
+    }
   }
 }

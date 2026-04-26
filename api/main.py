@@ -75,12 +75,12 @@ def _generate_transition(prev_skill: str, score: float) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Graceful fallback skills for non-technical JDs
+# Graceful fallback skills for non-technical or unrecognized JDs
 # ---------------------------------------------------------------------------
 _FALLBACK_SKILLS = [
-    {"skill": "Python", "level_required": "Intermediate", "importance": 0.7},
-    {"skill": "SQL", "level_required": "Beginner", "importance": 0.6},
-    {"skill": "Machine Learning", "level_required": "Beginner", "importance": 0.5},
+    {"skill": "Communication", "level_required": "Intermediate", "importance": 0.8},
+    {"skill": "Strategic Thinking", "level_required": "Intermediate", "importance": 0.7},
+    {"skill": "Project Management", "level_required": "Beginner", "importance": 0.6},
 ]
 
 
@@ -123,8 +123,8 @@ def initialize(req: InitRequest):
     save_session(req.session_id, session_data)
 
     init_message = (
-        "No specific technical skills were detected in the JD. "
-        "Proceeding with a General Software Engineering assessment."
+        "No specific role-specific skills were detected in the JD. "
+        "Proceeding with a General Professional assessment."
         if fallback_used
         else "Initialization successful."
     )
