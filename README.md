@@ -11,6 +11,10 @@ pinned: false
 
 An intelligent, role-aware, and adaptive skill assessment system designed to evaluate candidate readiness through conversational technical interviews.
 
+## 🔗 Live Demo & Links
+- **🔴 Live Application:** [Try it on Hugging Face Spaces](https://huggingface.co/spaces/shawrayan69/ai-skill-assessor)
+- **📹 Demo Video:** [Watch the Assessment Flow in Action](https://files.catbox.moe/o1wo6u.webp)
+
 ## 🚀 Overview
 The **AI Skill Assessor** transforms static evaluations into dynamic, context-aware technical interviews. It parses Job Descriptions (JDs) and Resumes, detects the primary engineering role, and conducts a structured interview using a "Waterfall" selection engine and adaptive difficulty scaling.
 
