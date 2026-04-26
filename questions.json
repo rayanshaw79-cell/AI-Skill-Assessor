@@ -1,0 +1,248 @@
+{
+  "python": {
+    "General": {
+      "Beginner": [
+        "What are the basic data types in Python and how do you define a list?",
+        "What is the difference between a list and a tuple in Python?",
+        "Can you explain what a Python decorator is in simple terms?"
+      ],
+      "Intermediate": [
+        "Explain the difference between deep and shallow copy in Python.",
+        "How does Python's garbage collection work? What is reference counting?",
+        "What are Python generators and when would you use one over a regular list?"
+      ],
+      "Advanced": [
+        "How does the Global Interpreter Lock (GIL) work, and how do you design a high-concurrency Python application around it?",
+        "Explain Python's descriptor protocol and how it relates to properties and class methods.",
+        "How would you use asyncio to build a high-throughput I/O-bound service?"
+      ]
+    },
+    "Backend": {
+      "Intermediate": [
+        "How do you handle database migrations in a FastAPI or Django application?",
+        "Explain how you would implement background task processing in Python using Celery or similar."
+      ],
+      "Advanced": [
+        "How would you architect a Python microservice for 10,000+ concurrent requests?",
+        "Describe a strategy for managing secrets and configuration across multiple Python services."
+      ]
+    },
+    "Data Science": {
+      "Intermediate": [
+        "How do you handle missing values in a large Pandas DataFrame efficiently?",
+        "Explain the difference between apply(), map(), and vectorized operations in Pandas."
+      ],
+      "Advanced": [
+        "How would you optimize memory usage when processing a 50GB CSV with Pandas or Dask?",
+        "Describe how you would build a reproducible ML pipeline using Python from data ingestion to model serving."
+      ]
+    }
+  },
+  "sql": {
+    "General": {
+      "Beginner": [
+        "What is a JOIN in SQL, and what is the difference between INNER JOIN and LEFT JOIN?",
+        "What is the purpose of the WHERE clause versus the HAVING clause?"
+      ],
+      "Intermediate": [
+        "Can you explain what database normalization is and why it's important?",
+        "What are window functions and when would you use ROW_NUMBER() vs RANK()?",
+        "What is an index and how does it affect query performance?"
+      ],
+      "Advanced": [
+        "How would you approach optimizing a slow-running SQL query? Discuss indexes, query plans, and common pitfalls.",
+        "Explain how you would design a schema for a multi-tenant SaaS application.",
+        "What is a CTE and how can recursive CTEs be used to traverse hierarchical data?"
+      ]
+    },
+    "Data Science": {
+      "Intermediate": [
+        "How would you calculate a 7-day rolling average in SQL?",
+        "Explain how you would pivot data from rows to columns using SQL."
+      ],
+      "Advanced": [
+        "How would you use SQL to build a funnel analysis report for user retention?"
+      ]
+    },
+    "Backend": {
+      "Intermediate": [
+        "What is the N+1 query problem and how do you avoid it in an ORM like SQLAlchemy?"
+      ],
+      "Advanced": [
+        "How would you implement optimistic locking vs pessimistic locking in a transactional database?"
+      ]
+    }
+  },
+  "machine learning": {
+    "General": {
+      "Beginner": [
+        "What is the difference between supervised and unsupervised learning?",
+        "What is overfitting and how would you detect it in a model?"
+      ],
+      "Intermediate": [
+        "Explain the bias-variance tradeoff in machine learning.",
+        "What is cross-validation and why is it important?",
+        "How do you choose between precision and recall as your primary metric?"
+      ],
+      "Advanced": [
+        "How would you handle a highly imbalanced dataset when training a classification model?",
+        "Describe the end-to-end process for deploying an ML model to production, including monitoring.",
+        "Compare gradient boosting (XGBoost, LightGBM) vs. Random Forests. When would you choose each?"
+      ]
+    },
+    "Data Science": {
+      "Intermediate": [
+        "Walk me through how you would approach a new regression problem from EDA to model evaluation."
+      ],
+      "Advanced": [
+        "How would you design an A/B testing framework to validate a new ML model's impact in production?"
+      ]
+    }
+  },
+  "react": {
+    "General": {
+      "Beginner": [
+        "What are React hooks, and can you give an example of how to use useState?",
+        "What is JSX and why is it used in React?"
+      ],
+      "Intermediate": [
+        "How does the virtual DOM work in React, and how does it improve performance?",
+        "Explain the difference between useEffect dependencies and why an empty dependency array matters.",
+        "What is prop drilling and how can you avoid it?"
+      ],
+      "Advanced": [
+        "Explain how you would manage complex global state in a large React application. Compare Context API vs Redux vs Zustand.",
+        "How does React's reconciliation algorithm (the 'diffing' process) work?",
+        "Describe code-splitting strategies in React and how you would implement lazy loading."
+      ]
+    },
+    "Frontend": {
+      "Intermediate": [
+        "How do you approach performance optimization for a React component that renders a large list?",
+        "Explain the difference between controlled and uncontrolled components in React forms."
+      ],
+      "Advanced": [
+        "How would you architect a micro-frontend system using React module federation?"
+      ]
+    }
+  },
+  "aws": {
+    "General": {
+      "Beginner": [
+        "What is Amazon S3 and what is it typically used for?",
+        "What is the difference between EC2 and AWS Lambda?"
+      ],
+      "Intermediate": [
+        "Explain the difference between EC2, ECS, and EKS for running containerized applications.",
+        "What is IAM in AWS and how do roles differ from users?"
+      ],
+      "Advanced": [
+        "How would you design a highly available and fault-tolerant architecture on AWS?",
+        "Describe how you would implement a zero-downtime deployment strategy on AWS."
+      ]
+    },
+    "DevOps": {
+      "Intermediate": [
+        "How would you set up a CI/CD pipeline on AWS using CodePipeline or GitHub Actions?",
+        "What is the difference between CloudFormation and Terraform for infrastructure as code?"
+      ],
+      "Advanced": [
+        "How would you design a multi-region active-active deployment on AWS for 99.99% uptime?",
+        "Explain how you would use AWS Cost Explorer and resource tagging to manage cloud spending."
+      ]
+    }
+  },
+  "docker": {
+    "General": {
+      "Beginner": [
+        "What is Docker and how is it different from a virtual machine?",
+        "What is a Dockerfile and what are the most important instructions in it?"
+      ],
+      "Intermediate": [
+        "What is the difference between CMD and ENTRYPOINT in a Dockerfile?",
+        "How do Docker volumes work and when would you use them over bind mounts?"
+      ],
+      "Advanced": [
+        "How would you minimize the size of a Docker image for a production Python application?",
+        "Explain Docker's networking modes (bridge, host, overlay) and when you'd use each."
+      ]
+    },
+    "DevOps": {
+      "Intermediate": [
+        "How would you use Docker Compose to orchestrate a multi-service local development environment?"
+      ],
+      "Advanced": [
+        "Describe a strategy for managing secrets securely inside Docker containers in a Kubernetes environment."
+      ]
+    }
+  },
+  "fastapi": {
+    "General": {
+      "Beginner": [
+        "What is FastAPI and what are its main advantages over Flask or Django?",
+        "How does FastAPI use Python type hints for request validation?"
+      ],
+      "Intermediate": [
+        "How do you handle dependency injection in FastAPI?",
+        "How would you implement JWT-based authentication in a FastAPI application?"
+      ],
+      "Advanced": [
+        "Explain how FastAPI leverages Pydantic v2 for data validation and serialization, particularly with nested models.",
+        "How would you structure a large FastAPI application with multiple routers and a shared database session?"
+      ]
+    }
+  },
+  "kubernetes": {
+    "General": {
+      "Beginner": [
+        "What is Kubernetes and what problems does it solve?",
+        "What is the difference between a Pod, a Deployment, and a Service in Kubernetes?"
+      ],
+      "Intermediate": [
+        "How does Kubernetes handle service discovery and load balancing?",
+        "What is a ConfigMap vs a Secret in Kubernetes, and when would you use each?"
+      ],
+      "Advanced": [
+        "How would you implement a blue-green or canary deployment strategy in Kubernetes?",
+        "Explain how Kubernetes resource limits and requests affect scheduling and node stability."
+      ]
+    },
+    "DevOps": {
+      "Advanced": [
+        "How would you design a multi-cluster Kubernetes strategy for disaster recovery?"
+      ]
+    }
+  },
+  "deep learning": {
+    "General": {
+      "Beginner": [
+        "What is a neural network and what is a neuron?",
+        "What is the role of an activation function in a neural network?"
+      ],
+      "Intermediate": [
+        "Explain backpropagation and how gradients flow through a network.",
+        "What is the vanishing gradient problem and how do architectures like ResNet address it?"
+      ],
+      "Advanced": [
+        "Compare transformer-based architectures vs. LSTMs for sequence modelling tasks.",
+        "How would you approach fine-tuning a large pre-trained model (e.g., BERT) for a custom classification task?"
+      ]
+    }
+  },
+  "typescript": {
+    "General": {
+      "Beginner": [
+        "What is the difference between TypeScript and JavaScript?",
+        "What are TypeScript interfaces and how do they differ from types?"
+      ],
+      "Intermediate": [
+        "Explain generics in TypeScript and give an example of a use case.",
+        "What are utility types like Partial, Required, and Pick, and how would you use them?"
+      ],
+      "Advanced": [
+        "Explain conditional types and mapped types in TypeScript with an example.",
+        "How would you design a type-safe event emitter in TypeScript?"
+      ]
+    }
+  }
+}
